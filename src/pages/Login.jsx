@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react'
 import {data, useNavigate} from 'react-router-dom'
+import pizzaIcon from "../assets/pizzaIcon.png"
+import "./Login.css"
 import {supabase} from '../supabaseClient'
 
 export default function Login() {
@@ -36,9 +38,10 @@ export default function Login() {
     }, [])*/
 
     return (
-        <>
+        <body>
             <header>
-                <h1>Schedule App Login</h1>
+                <img src={pizzaIcon} className="logo" alt="pizzaIcon" />
+                <h1>A Slice of Time</h1>
             </header>
 
             <main className="login">
@@ -69,6 +72,6 @@ export default function Login() {
                     <button type="submit">Login</button>
                 </form>
             </main>
-        </>
+        </body>
     )
 }
