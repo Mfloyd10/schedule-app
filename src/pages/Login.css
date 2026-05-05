@@ -12,7 +12,7 @@ html, body, #root {
   justify-content: center;
   align-items: center;
   background-color: #fce5c0;
-  background-image: url("/pattern.svg");
+  background-image: url("../../public/pattern.svg");
   background-repeat: repeat;
 }
 
@@ -45,11 +45,11 @@ header span {
 }
 
 .loginCard {
-  background: white;
-  border-radius: 16px;
-  width: 70vh;
-  height: 80vh;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
 .topHalf {
@@ -57,8 +57,7 @@ header span {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 30vh;
-
+    padding: 2.5rem 2rem;
     background-color: #291705;
     color: white;
     border-radius: 16px;
@@ -69,11 +68,10 @@ header span {
 .bottomHalf {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    height: 40vh;
     padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .passwordWrapper {
@@ -84,7 +82,7 @@ header span {
 
 .passwordWrapper span {
     position: absolute;
-    left: 95%;
+    left: 92%;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -98,17 +96,18 @@ form {
     gap: 1rem;
 }
 
-form button, input  {
-    align-self: center;
-    width: 98%;
-    height: 3vh;
+form button, input {
+    width: 100%;
+    height: auto;
+    min-height: 42px;
     border-radius: 8px;
-    padding: .25rem;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 form label {
-    align-self: flex-start;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: .75;
 }
 
@@ -118,4 +117,5 @@ form label {
       font-size: 13px;
       text-align: center;
       opacity: .45;
+      padding-bottom: 1.25rem;
 }
