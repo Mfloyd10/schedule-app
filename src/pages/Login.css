@@ -1,22 +1,121 @@
-body {
-    margin: 0;
-    font-family: poppins, sans-serif;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.loginWrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fce5c0;
+  background-image: url("/pattern.svg");
+  background-repeat: repeat;
+}
 
-    background-color: #efb140;
-    width: 100%;
-    gap: 15px;
-    font-size: larger;
+header h1 {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+header span {
+  margin: 0;
+  padding: 0;
+
+  color: #d67b1c;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: .60rem;
+  letter-spacing: 2px;
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    background-color: #734414;
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid #d67b1c;
 
+}
+
+.loginCard {
+  background: white;
+  border-radius: 16px;
+  width: 70vh;
+  height: 80vh;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.topHalf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+
+    background-color: #291705;
+    color: white;
+    border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.bottomHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 40vh;
+    padding: 2rem;
+}
+
+.passwordWrapper {
+    position: relative;
+    gap: .5rem;
+    width: 100%
+}
+
+.passwordWrapper span {
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+}
+
+form button, input  {
+    align-self: center;
+    width: 98%;
+    height: 3vh;
+    border-radius: 8px;
+    padding: .25rem;
+}
+
+form label {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    opacity: .75;
+}
+
+.managerMessage {
+      font-weight: 800;
+      color: #d67b1c;
+      font-size: 13px;
+      text-align: center;
+      opacity: .45;
 }
