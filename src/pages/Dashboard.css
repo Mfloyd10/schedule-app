@@ -1,17 +1,16 @@
 html, body, #root {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     font-family: 'Poppins', sans-serif;
-    overflow-y: hidden;
 }
 
 .dashboardWrapper {
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .topBar {
@@ -21,9 +20,9 @@ html, body, #root {
     align-items: center;
     background-color: #291705;
     color: white;
-
-    padding: 1rem;
-
+    padding: .3rem 1rem;
+    height: 60px;
+    flex-shrink: 0;
 }
 
 .topBarLeft {
@@ -35,7 +34,7 @@ html, body, #root {
 }
 
 .dashboardLogo {
-    width: 2.5rem;
+    width: 2rem;
     background-color: #734414;
     padding: .4rem;
     border-radius: 50%;
@@ -44,14 +43,18 @@ html, body, #root {
 
 .title {
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .currentUser {
-    font-weight: 400;
-    font-size: .7rem;
+    font-weight: 700;
+    font-size: .8rem;
     opacity: 75%;
     color: #d67b1c;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .leftWrapper {
@@ -77,7 +80,7 @@ html, body, #root {
 .logoutButton {
     width: 100%;
     text-align: left;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: .85rem;
 
     background-color: #734414;
@@ -96,8 +99,9 @@ html, body, #root {
 }
 
 .dashboardBody {
-
-    height: 100vh;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
     background-color: #fce5c0;
     background-image: url("../../public/pattern.svg");
     background-repeat: repeat;
@@ -107,14 +111,102 @@ html, body, #root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    width: 180px;
+    min-width: 160px;
+    flex-shrink: 0;
+    background-color: #291705;
+    padding: 2rem .5rem;
+    border-top: 2px solid #d67b1c;
+    gap: 1.5rem;
+    align-self: stretch;
+}
 
-    width: 12%;
-    height: 75vh;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
-    background-color: white;
-    padding: 1rem;
+.sideNav button svg {
+    font-size: 1.2rem;
+}
 
-    border-radius: 1rem;
+.sideNav > button {
+    margin-bottom: 1rem;
+}
+
+.sideNav button {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: #d67b1c;
+    font-size: 1.2rem;
+    text-align: left;
+
+    border-radius: 5px;
+    padding: 1rem .7rem;
+}
+
+.sideNav button:hover {
+    background-color: rgb(66, 37, 9);
+    color: #d9a773;
+}
+
+.sideNav button.active {
+    background-color: rgba(217, 167, 115, 0.24);
+    border-radius: 8px;
+    color: #d67b1c;
+    font-weight: 600;
+}
+
+.bottomSideWrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    flex-shrink: 0;
+}
+
+.bottomUserWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.managerTag {
+    font-weight: 700;
+    font-size: .7rem;
+    opacity: 60%;
+    color: gray;
+    white-space: nowrap;
+}
+
+.userAvatar {
+    width: 1.5rem;
+    background-color: #ff9425;
+    padding: .5rem;
+    border-radius: 50%;
+    border: 1px solid #d67b1c;
+    font-weight: 600;
+    color: white;
+    font-size: .8rem;
+
+    margin: 0;
+}
+
+.settingsButton {
+    background: transparent;
+    color: #d67b1c;
+    border: none;
+    margin-left: 5rem;
+    opacity: 65;
+    padding: 0;
+    border-radius: 0;
+}
+
+.settingsButton:hover {
+    color: #d9a773;
+    opacity: 100;
+
 }
