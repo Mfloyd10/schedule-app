@@ -1,0 +1,47 @@
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.employeeBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.employeeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: min(80%, 1800px);
+  max-height: 100vh;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: row;
+    gap: 15rem;
+}
+
+header {
+    font-size: 1.5rem;
+
+}
+
+.employees {
+    overflow-y: auto;
+    height: 80%;
+}
