@@ -1,3 +1,5 @@
+import { generateICS } from './generateICS'
+
 export async function sendSchedule(employees) {
     const results = []
 
@@ -24,13 +26,17 @@ export async function sendSchedule(employees) {
         // Send email if email exists
         if (emp.email) {
             try {
+                const icsData = generateICS(emp)
+
                 const res = await fetch('/api/send-email', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         to: emp.email,
                         subject: `Your schedule for the week of ${emp.shifts[0]?.date}`,
-                        html: buildEmailHTML(emp)
+                        html: buildEmailHTML(emp),
+                        icsData,
+                        employeeName: emp.name
                     })
                 })
                 if (res.ok) result.emailSent = true
