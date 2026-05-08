@@ -20,7 +20,7 @@ export default function Schedule() {
                 .select('*')
 
             const matched = parsed.map(emp => {
-                const found = dbEmployees.find(db =>
+                const found = (dbEmployees || []).find(db =>
                     db.name.toLowerCase() === emp.name.toLowerCase()
                 )
                 return {

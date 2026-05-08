@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     }
 
     const { phone, message } = req.body
-ver
+
     try {
         const command = new PublishCommand({
             PhoneNumber: phone,
