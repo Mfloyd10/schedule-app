@@ -54,9 +54,25 @@ export default function Schedule() {
         setSending(false)
     }
 
+    const testSMS = async () => {
+        const res = await fetch('/api/send-sms', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                phone: '3044538752',
+                message: 'Test from A Slice of Time!'
+            })
+        })
+        const data = await res.json()
+        console.log(data)
+    }
+
     return (
         <div>
             <input type="file" accept=".csv" onChange={handleFile} />
+            <button onClick={testSMS}>Test SMS</button>
+
+
 
             {parsedEmployees.length > 0 && (
                 <div>
