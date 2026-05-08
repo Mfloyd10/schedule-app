@@ -10,13 +10,15 @@ export default async function handler(req, res) {
     const { to, subject, html } = req.body
 
     try {
-        await resend.emails.send({
+        const response = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to,
             subject,
             html,
         })
-        res.status(200).json({ success: true })
+
+        console.log('Resend response:', response)
+        res.status(200).json({ success: true, response })
     } catch (error) {
         console.error('Resend error:', error)
         res.status(500).json({ error: error.message })
