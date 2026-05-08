@@ -4,7 +4,7 @@ export async function sendSchedule(employees) {
     const results = []
 
     for (const emp of employees) {
-        const result = { name: emp.name, emailSent: false, error: null }
+        const result = { name: emp.name, emailSent: false, smsSent: false, error: null }
 
         if (emp.email) {
             try {
@@ -27,10 +27,31 @@ export async function sendSchedule(employees) {
             }
         }
 
+        if (emp.phone) {
+            try {
+                const res = await fetch('/api/send-sms', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        phone: emp.phone,
+                        message: buildSMSMessage(emp)
+                    })
+                })
+                if (res.ok) result.smsSent = true
+            } catch (err) {
+                result.error = err.message
+            }
+        }
+
         results.push(result)
     }
 
     return results
+}
+
+function buildSMSMessage(emp) {
+    const shifts = emp.shifts.map(s => `${s.date}: ${s.start} - ${s.end}`).join('\n')
+    return `Hi ${emp.name.split(' ')[0]}! Here's your schedule:\n\n${shifts}\n\nTotal: ${emp.totalHours}hrs\n\n- A Slice of Time`
 }
 
 function buildEmailHTML(emp) {
